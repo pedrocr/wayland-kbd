@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MappedKeyboard` struct in crate `wayland_kbd`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MappedKeyboard">
+
+    <title>wayland_kbd::MappedKeyboard - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>wayland_kbd</a></p><script>window.sidebarCurrent = {name: 'MappedKeyboard', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>wayland_kbd</a>::<wbr><a class='struct' href=''>MappedKeyboard</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-3034' class='srclink' href='../src/wayland_kbd/src/mapped_keyboard.rs.html#68-71' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct MappedKeyboard&lt;H:&nbsp;<a class='trait' href='../wayland_kbd/trait.Handler.html' title='wayland_kbd::Handler'>Handler</a>&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>A wayland keyboard mapped to its keymap</p>
+
+<p>It wraps an event iterator on this keyboard, catching the Keymap, Key, and Modifiers
+events of the keyboard to handle them using libxkbcommon. All other events are directly
+forwarded.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;H:&nbsp;<a class='trait' href='../wayland_kbd/trait.Handler.html' title='wayland_kbd::Handler'>Handler</a>&gt; <a class='struct' href='../wayland_kbd/struct.MappedKeyboard.html' title='wayland_kbd::MappedKeyboard'>MappedKeyboard</a>&lt;H&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3041' class='srclink' href='../src/wayland_kbd/src/mapped_keyboard.rs.html#78-129' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(handler: H) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../wayland_kbd/struct.MappedKeyboard.html' title='wayland_kbd::MappedKeyboard'>MappedKeyboard</a>&lt;H&gt;,&nbsp;<a class='enum' href='../wayland_kbd/enum.MappedKeyboardError.html' title='wayland_kbd::MappedKeyboardError'>MappedKeyboardError</a>&gt;</code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;H:&nbsp;<a class='trait' href='../wayland_kbd/trait.Handler.html' title='wayland_kbd::Handler'>Handler</a>&gt; <a class='trait' href='../wayland_client/generated/client/wl_keyboard/trait.Handler.html' title='wayland_client::generated::client::wl_keyboard::Handler'>Handler</a> for <a class='struct' href='../wayland_kbd/struct.MappedKeyboard.html' title='wayland_kbd::MappedKeyboard'>MappedKeyboard</a>&lt;H&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3087' class='srclink' href='../src/wayland_kbd/src/mapped_keyboard.rs.html#146-174' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.keymap' class='method'><code>fn <a href='../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.keymap' class='fnname'>keymap</a>(&amp;mut self, _: &amp;mut <a class='struct' href='../wayland_client/event_queue/struct.EventQueueHandle.html' title='wayland_client::event_queue::EventQueueHandle'>EventQueueHandle</a>, _: &amp;<a class='struct' href='../wayland_client/generated/client/wl_keyboard/struct.WlKeyboard.html' title='wayland_client::generated::client::wl_keyboard::WlKeyboard'>WlKeyboard</a>, _: <a class='enum' href='../wayland_client/generated/client/wl_keyboard/enum.KeymapFormat.html' title='wayland_client::generated::client::wl_keyboard::KeymapFormat'>KeymapFormat</a>, fd: <a class='type' href='https://doc.rust-lang.org/nightly/std/sys/ext/io/type.RawFd.html' title='std::sys::ext::io::RawFd'>RawFd</a>, size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>)</code></h4>
+<div class='docblock'><p>keyboard mapping <a href="../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.keymap">Read more</a></p>
+</div><h4 id='method.enter' class='method'><code>fn <a href='../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.enter' class='fnname'>enter</a>(&amp;mut self, evqh: &amp;mut <a class='struct' href='../wayland_client/event_queue/struct.EventQueueHandle.html' title='wayland_client::event_queue::EventQueueHandle'>EventQueueHandle</a>, proxy: &amp;<a class='struct' href='../wayland_client/generated/client/wl_keyboard/struct.WlKeyboard.html' title='wayland_client::generated::client::wl_keyboard::WlKeyboard'>WlKeyboard</a>, serial: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, surface: &amp;<a class='struct' href='../wayland_client/generated/client/wl_surface/struct.WlSurface.html' title='wayland_client::generated::client::wl_surface::WlSurface'>WlSurface</a>, keys: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;)</code></h4>
+<div class='docblock'><p>enter event <a href="../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.enter">Read more</a></p>
+</div><h4 id='method.leave' class='method'><code>fn <a href='../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.leave' class='fnname'>leave</a>(&amp;mut self, evqh: &amp;mut <a class='struct' href='../wayland_client/event_queue/struct.EventQueueHandle.html' title='wayland_client::event_queue::EventQueueHandle'>EventQueueHandle</a>, proxy: &amp;<a class='struct' href='../wayland_client/generated/client/wl_keyboard/struct.WlKeyboard.html' title='wayland_client::generated::client::wl_keyboard::WlKeyboard'>WlKeyboard</a>, serial: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, surface: &amp;<a class='struct' href='../wayland_client/generated/client/wl_surface/struct.WlSurface.html' title='wayland_client::generated::client::wl_surface::WlSurface'>WlSurface</a>)</code></h4>
+<div class='docblock'><p>leave event <a href="../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.leave">Read more</a></p>
+</div><h4 id='method.key' class='method'><code>fn <a href='../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.key' class='fnname'>key</a>(&amp;mut self, evqh: &amp;mut <a class='struct' href='../wayland_client/event_queue/struct.EventQueueHandle.html' title='wayland_client::event_queue::EventQueueHandle'>EventQueueHandle</a>, proxy: &amp;<a class='struct' href='../wayland_client/generated/client/wl_keyboard/struct.WlKeyboard.html' title='wayland_client::generated::client::wl_keyboard::WlKeyboard'>WlKeyboard</a>, serial: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, time: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, key: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, state: <a class='enum' href='../wayland_client/generated/client/wl_keyboard/enum.KeyState.html' title='wayland_client::generated::client::wl_keyboard::KeyState'>KeyState</a>)</code></h4>
+<div class='docblock'><p>key event <a href="../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.key">Read more</a></p>
+</div><h4 id='method.modifiers' class='method'><code>fn <a href='../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.modifiers' class='fnname'>modifiers</a>(&amp;mut self, _: &amp;mut <a class='struct' href='../wayland_client/event_queue/struct.EventQueueHandle.html' title='wayland_client::event_queue::EventQueueHandle'>EventQueueHandle</a>, _: &amp;<a class='struct' href='../wayland_client/generated/client/wl_keyboard/struct.WlKeyboard.html' title='wayland_client::generated::client::wl_keyboard::WlKeyboard'>WlKeyboard</a>, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, mods_depressed: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, mods_latched: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, mods_locked: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, group: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>)</code></h4>
+<div class='docblock'><p>modifier and group state <a href="../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.modifiers">Read more</a></p>
+</div><h4 id='method.repeat_info' class='method'><code>fn <a href='../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.repeat_info' class='fnname'>repeat_info</a>(&amp;mut self, evqh: &amp;mut <a class='struct' href='../wayland_client/event_queue/struct.EventQueueHandle.html' title='wayland_client::event_queue::EventQueueHandle'>EventQueueHandle</a>, proxy: &amp;<a class='struct' href='../wayland_client/generated/client/wl_keyboard/struct.WlKeyboard.html' title='wayland_client::generated::client::wl_keyboard::WlKeyboard'>WlKeyboard</a>, rate: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, delay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>)</code></h4>
+<div class='docblock'><p>repeat rate and delay <a href="../wayland_client/generated/client/wl_keyboard/trait.Handler.html#method.repeat_info">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;H:&nbsp;<a class='trait' href='../wayland_kbd/trait.Handler.html' title='wayland_kbd::Handler'>Handler</a>&gt; <a class='trait' href='../wayland_client/trait.Handler.html' title='wayland_client::Handler'>Handler</a>&lt;<a class='struct' href='../wayland_client/generated/client/wl_keyboard/struct.WlKeyboard.html' title='wayland_client::generated::client::wl_keyboard::WlKeyboard'>WlKeyboard</a>&gt; for <a class='struct' href='../wayland_kbd/struct.MappedKeyboard.html' title='wayland_kbd::MappedKeyboard'>MappedKeyboard</a>&lt;H&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3132' class='srclink' href='../src/wayland_kbd/src/mapped_keyboard.rs.html#176-180' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.message' class='method'><code>unsafe fn <a href='../wayland_client/trait.Handler.html#tymethod.message' class='fnname'>message</a>(&amp;mut self, evq: &amp;mut <a class='struct' href='../wayland_client/event_queue/struct.EventQueueHandle.html' title='wayland_client::event_queue::EventQueueHandle'>EventQueueHandle</a>, proxy: &amp;<a class='struct' href='../wayland_client/generated/client/wl_keyboard/struct.WlKeyboard.html' title='wayland_client::generated::client::wl_keyboard::WlKeyboard'>WlKeyboard</a>, opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, args: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../wayland_sys/common/struct.wl_argument.html' title='wayland_sys::common::wl_argument'>wl_argument</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>,&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+<div class='docblock'><p>Dispatch a message.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "wayland_kbd";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
