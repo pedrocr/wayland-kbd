@@ -1,5 +1,5 @@
 (function() {var implementors = {};
-implementors["libloading"] = [];
+implementors["wayland_kbd"] = [];
 
             if (window.register_implementors) {
                 window.register_implementors(implementors);
